@@ -3,7 +3,7 @@
 // Konfigurasi instrumen + fetch candle H1 dari Twelve Data
 // ============================================================
 
-const TWELVE_DATA_API_KEY = 'c2a9e1bf8cc34b799d9808465113a66b';
+const TWELVE_DATA_API_KEY = 'bbdd38f627f748409e30077b748e5098';
 
 // Jumlah candle kiri/kanan H1 untuk validasi pivot swing.
 // N=3 → sensitif cukup untuk menangkap struktur H1 tanpa noise berlebih.
