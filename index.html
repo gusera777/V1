@@ -144,7 +144,7 @@ Source: Twelve Data — H1 candles · Auto swing &amp; trend detection
 
 <!-- ── Action Row ── -->
 <div class="action-row">
-<button class="btn-primary" onclick="calc()">
+<button class="btn-primary" id="analyzeBtn" onclick="calc()">
 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
 <path d="M7.5 1.5v12M1.5 7.5h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
 <circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5"/>
@@ -153,6 +153,8 @@ Run Analysis
 </button>
 <button type="button" class="btn-ghost" onclick="resetForm()">Reset</button>
 </div>
+
+<div id="gateNote" class="gate-note" role="status" aria-live="polite"></div>
 
 <button type="button" class="btn-copy" onclick="copyResult()">
 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -169,6 +171,31 @@ Copy Analysis to Clipboard
 Analysis Output
 </div>
 <div id="out">Waiting for analysis — tap <strong style="color:#D4A843">Run Analysis</strong> to begin.</div>
+</div>
+
+<!-- ── Card 03 · Analysis History ── -->
+<div class="card history-card">
+<div class="card-hd">
+<div class="card-ico">🕘</div>
+<span class="card-title">Analysis History</span>
+<span id="historyCount" class="history-count">0</span>
+<div class="card-hd-actions">
+<button type="button" class="btn-icon" id="downloadHistoryBtn" title="Download history">
+<svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+<path d="M7 1v8m0 0L4 6m3 3l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.5 10.5v1.2a1.3 1.3 0 0 0 1.3 1.3h8.4a1.3 1.3 0 0 0 1.3-1.3v-1.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+</button>
+<button type="button" class="btn-icon" id="clearHistoryBtn" title="Clear history">
+<svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+<path d="M2 3.5h10M5.25 3.5V2a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 .75.75v1.5M6 6.5v4M8 6.5v4M3 3.5l.6 8.1a1 1 0 0 0 1 .9h4.8a1 1 0 0 0 1-.9l.6-8.1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+</div>
+</div>
+<div class="card-bd history-card-bd">
+<div id="historyList" class="history-list"></div>
+</div>
 </div>
 
 </div><!-- /wrap -->
