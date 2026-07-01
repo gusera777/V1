@@ -430,6 +430,84 @@ margin-top: 20px;
 .action-row .btn-ghost { width: auto; padding: 13px 20px; white-space: nowrap; }
 
 /* ================================================================
+LIVE SIGNAL ALERTS — toggle + auto-scan indicator
+================================================================ */
+.live-alert-row {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-top: 12px;
+padding: 12px 14px;
+background: var(--bg-elevated);
+border: 1px solid var(--border-dim);
+border-radius: var(--r-sm);
+}
+
+.toggle-switch {
+position: relative;
+flex-shrink: 0;
+width: 40px;
+height: 23px;
+display: inline-block;
+}
+.toggle-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.toggle-slider {
+position: absolute;
+inset: 0;
+cursor: pointer;
+background: var(--bg-overlay);
+border: 1px solid var(--border-dim);
+border-radius: 30px;
+transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.toggle-slider::before {
+content: '';
+position: absolute;
+width: 15px;
+height: 15px;
+left: 3px;
+top: 3px;
+background: var(--txt-muted);
+border-radius: 50%;
+transition: transform 0.2s var(--ease), background 0.2s var(--ease);
+}
+.toggle-switch input:checked + .toggle-slider {
+background: rgba(0,212,160,0.16);
+border-color: rgba(0,212,160,0.35);
+}
+.toggle-switch input:checked + .toggle-slider::before {
+transform: translateX(17px);
+background: var(--up);
+box-shadow: 0 0 8px rgba(0,212,160,0.5);
+}
+.toggle-switch input:focus-visible + .toggle-slider {
+outline: 2px solid rgba(212,168,67,0.45);
+outline-offset: 2px;
+}
+
+.live-alert-text { min-width: 0; }
+
+.live-alert-title {
+font-family: var(--font-display);
+font-size: 12px;
+font-weight: 700;
+color: var(--txt-primary);
+letter-spacing: 0.2px;
+}
+
+.live-alert-sub {
+margin-top: 2px;
+font-family: var(--font-mono);
+font-size: 9.5px;
+line-height: 1.5;
+color: var(--txt-muted);
+}
+
+/* ================================================================
 GATE NOTE — alasan tombol Run Analysis terkunci
 ================================================================ */
 .gate-note {
